@@ -46,3 +46,8 @@ group :test do
   gem "capybara-webkit"
   gem "thin"
 end
+
+# For heroku cedar
+group :staging, :production do
+  gem "thin"
+end
