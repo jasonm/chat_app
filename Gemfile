@@ -21,6 +21,7 @@ gem "flutie"
 gem "bourbon"
 gem "airbrake"
 gem "dynamic_form"
+gem "rails-backbone"
 
 gem "rake", "0.9.2"
 
