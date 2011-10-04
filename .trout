@@ -1,0 +1,13 @@
+---
+:files:
+  Gemfile:
+    :filename: Gemfile
+    :git_url: git://github.com/thoughtbot/suspenders.git
+    :version: 0f5f1947be387120fed3c66e156650ec6cb41f55
+    :source_root: template/trout
+  app/assets/javascripts/prefilled_input.js:
+    :filename: app/assets/javascripts/prefilled_input.js
+    :git_url: git://github.com/thoughtbot/suspenders.git
+    :version: 0f5f1947be387120fed3c66e156650ec6cb41f55
+    :source_root: template/trout
+:version: '1.0'
