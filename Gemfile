@@ -25,6 +25,8 @@ gem "rails-backbone"
 
 gem "rake", "0.9.2"
 
+gem "jasminerice"
+
 # RSpec needs to be in :development group to expose generators
 # and rake tasks without having to type RAILS_ENV=test.
 group :development, :test do
