@@ -7,7 +7,7 @@ db/schema.rb
 public/system
 *.DS_Store
 coverage/*
-*.swp
+*.sw[mnop]
 rerun.txt
 tags
 !.keep
