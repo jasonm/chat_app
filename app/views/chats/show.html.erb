@@ -10,6 +10,10 @@
   <script type="text/javascript">
     $(function() {
       ChatApp.init({
+        element: $("#chat-app"),
+        collections: {
+          rooms: new ChatApp.Collections.Rooms().reset(<%== Room.all.to_json -%>)
+        }
       });
     });
   </script>

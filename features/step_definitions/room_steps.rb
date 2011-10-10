@@ -8,7 +8,6 @@ Then /^the list of rooms should be empty$/ do
 end
 
 When /^I create a new room "([^"]*)"$/ do |room_name|
-  click_link("Start a new chat room")
   fill_in("Name", with: room_name)
   click_button("Create this new chat room")
 end

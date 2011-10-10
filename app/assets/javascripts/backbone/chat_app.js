@@ -10,8 +10,9 @@ window.ChatApp = {
   Routers: {},
   Views: {},
 
-  init: function() {
-    new ChatApp.Routers.Chat();
+  init: function(options) {
+    new ChatApp.Routers.Chat(options);
+
     if (!Backbone.history.started) {
       Backbone.history.start();
       Backbone.history.started = true;
