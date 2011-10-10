@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     session[:user_id] = user
   end
 
+  def sign_out
+    session[:user_id] = nil
+  end
+
   def current_user
     session[:user_id] && User.find(session[:user_id])
   end
