@@ -12,12 +12,9 @@ window.ChatApp = {
 
   init: function() {
     new ChatApp.Routers.Chat();
-    try {
+    if (!Backbone.history.started) {
       Backbone.history.start();
-    } catch (e) {
-      if (e.message != "Backbone.history has already been started") {
-        throw e;
-      }
+      Backbone.history.started = true;
     }
   }
 };
