@@ -8,9 +8,12 @@
 </head>
 <body class="<%= body_class %>">
   <div id="header">
+    <h1>Chat</h1>
+    <%= render 'shared/flashes' -%>
   </div>
-  <%= render 'shared/flashes' -%>
-  <%= yield %>
+  <div id="content">
+    <%= yield %>
+  </div>
   <%= render 'shared/javascript' %>
 </body>
 </html>

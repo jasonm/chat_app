@@ -1,3 +1,10 @@
+<div id="chat-app">
+</div>
+
+<% if signed_in? %>
+  Logged in as <%= current_user.name %>
+<% end %>
+
 <script type="text/javascript">
   ChatApp.init({
   });

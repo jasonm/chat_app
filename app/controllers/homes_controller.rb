@@ -1,5 +1,8 @@
 class HomesController < ApplicationController
   def show
-    redirect_to login_url
+    if signed_in?
+    else
+      redirect_to login_url
+    end
   end
 end

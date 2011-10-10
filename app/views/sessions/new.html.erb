@@ -1,0 +1,18 @@
+<%= form_for :session, method: :post, url: sessions_path do |form| %>
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <p class="inline-hints">This is how other users will see you in chat.</p>
+      </li>
+    </ol>
+  </fieldset>
+  <fieldset class="buttons">
+    <ol>
+      <li class="commit">
+        <input name="commit" type="submit" value="Login">
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

@@ -3,12 +3,12 @@ Then /^I should be logged out$/ do
 end
 
 When /^I log in as "([^"]*)"$/ do |name|
-  fill_in("Your name", with: name)
+  fill_in("Name", with: name)
   click_button("Login")
 end
 
 Then /^I should be logged in as "([^"]*)"$/ do |name|
-  page.should have_no_content "Logged in as #{name}"
+  page.should have_content "Logged in as #{name}"
 end
 
 When /^I log out$/ do

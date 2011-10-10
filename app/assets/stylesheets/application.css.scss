@@ -8,3 +8,26 @@
 
 @import 'flutie';
 @import 'bourbon';
+
+body {
+  margin: 20px 0;
+}
+
+#header {
+  width: 600px;
+  margin: 0 auto;
+}
+
+#content {
+  width: 600px;
+  margin: 0 auto;
+}
+
+body.sessions {
+  form {
+    input[type=submit] {
+      @include button;
+    }
+  }
+}
+
