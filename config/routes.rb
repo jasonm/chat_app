@@ -5,6 +5,8 @@ ChatApp::Application.routes.draw do
   match 'login' => 'sessions#new'
   match 'logout' => 'sessions#destroy'
 
+  resource :chat, only: %w(show)
+
   if %w(development test).include? Rails.env
     mount Jasminerice::Engine => "/jasmine"
   end
