@@ -11,6 +11,7 @@ window.ChatApp = {
   Views: {},
 
   init: function(options) {
+    ChatApp.options = options;
     new ChatApp.Routers.Chat(options);
 
     if (!Backbone.history.started) {

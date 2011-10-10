@@ -12,20 +12,13 @@ describe("Views.RoomList", function() {
 
   it("creates a new room when the form is submitted", function() {
     var el = $("<div></div>");
-    var view = new ChatApp.Views.RoomList({ el: el });
-
-    var stubRoom = { save: sinon.stub() };
-    sinon.stub(ChatApp.Models, "Room", function() {
-      return stubRoom;
-    });
+    var roomsCollection = { create: sinon.stub() };
+    var view = new ChatApp.Views.RoomList({ el: el, collection: roomsCollection });
 
     view.render();
     $("input[name=name]", el).val("Watercooler");
     $("form", el).submit();
 
-    extect(ChatApp.Models.Room).toHaveBeenCalled();
-    expect(stubRoom.save).toHaveBeenCalled();
-
-    ChatApp.Models.Room.restore();
+    expect(roomsCollection.create).toHaveBeenCalled();
   });
 });

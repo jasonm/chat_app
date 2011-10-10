@@ -1,6 +1,9 @@
 window.ChatApp.Views.RoomList = Backbone.View.extend({
-  tagName: "ul",
-  id: "chat-rooms",
+  tagName: "section",
+
+  events: {
+    "submit form": "submit"
+  },
 
   initialize: function() {
   },
@@ -10,6 +13,14 @@ window.ChatApp.Views.RoomList = Backbone.View.extend({
   render: function() {
     $(this.el).empty().html(this.template({ rooms: this.collection }));
     return this;
+  },
+
+  submit: function(event) {
+    event.preventDefault();
+
+    this.collection.create({
+      name: this.$("input[name=name]").val()
+    });
   }
 
 });
