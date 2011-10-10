@@ -22,6 +22,7 @@ gem "bourbon"
 gem "airbrake"
 gem "dynamic_form"
 gem "rails-backbone"
+gem "ejs"
 
 gem "rake", "0.9.2"
 
