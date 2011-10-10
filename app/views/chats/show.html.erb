@@ -6,7 +6,11 @@
   <%= link_to "Log out", logout_path %>
 <% end %>
 
-<script type="text/javascript">
-  ChatApp.init({
-  });
-</script>
+<%= content_for :javascript do %>
+  <script type="text/javascript">
+    $(function() {
+      ChatApp.init({
+      });
+    });
+  </script>
+<% end %>
