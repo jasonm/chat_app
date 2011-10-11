@@ -3,7 +3,7 @@ When /^I go in "([^"]*)"$/ do |room_name|
 end
 
 Then /^I should see an empty chat$/ do
-  page.should have_no_css(selector_for('chat room messages'))
+  page.should have_no_css(selector_for('a chat room message'))
 end
 
 When /^I say "([^"]*)"$/ do |message|

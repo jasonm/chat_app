@@ -1,0 +1,15 @@
+<h3><%= room.escape('name') %></h3>
+<ul id="chat-messages">
+</ul>
+
+<form id="new-chat-message">
+  <fieldset class="inputs">
+    <ol>
+      <li>
+        <label for="new-message-name">Chat</label>
+        <input type="text" name="body" id="new-message-name">
+        <input name="commit" type="submit" value="Send">
+      </li>
+    </ol>
+  </fieldset>
+</form>

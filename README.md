@@ -12,7 +12,7 @@ You can login with any name, it's stored in the session.  User.find_or_create_by
 
 User:    [id, name]
 Room:    [id, name]
-Message: [id, user_id, body]
+Message: [id, user_id, room_id, body]
 
 Features:
 
