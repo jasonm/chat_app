@@ -1,14 +1,13 @@
 describe("Views.RoomList", function() {
-  var rooms;
+  var rooms, el, view;
 
   beforeEach(function() {
     rooms = new ChatApp.Collections.Rooms([{ name: "Red" }, { name: "Blue" }]);
+    el = $("<div></div>");
+    view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
   });
 
   it("renders a new room form", function() {
-    var el = $("<div></div>");
-    var view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
-
     view.render();
 
     expect(el).toContain("form");
@@ -17,12 +16,9 @@ describe("Views.RoomList", function() {
   });
 
   it("creates a new room when the form is submitted", function() {
-    var el = $("<div></div>");
     sinon.stub(rooms, "create");
-
-    var view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
-
     view.render();
+
     $("input[name=name]", el).val("Watercooler");
     $("form", el).submit();
 
@@ -30,9 +26,6 @@ describe("Views.RoomList", function() {
   });
 
   it("renders the list of rooms", function() {
-    var el = $("<div></div>");
-    var view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
-
     view.render();
 
     expect(el).toContain("ul#chat-rooms li a:contains('Red')")
@@ -40,10 +33,7 @@ describe("Views.RoomList", function() {
   });
 
   it("re-renders when a model is added to the collection", function() {
-    var el = $("<div></div>");
-    var view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
     view.render();
-
     rooms.add({ name: "Green" });
 
     expect(el).toContain("ul#chat-rooms li a:contains('Green')")
