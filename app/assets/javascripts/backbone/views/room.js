@@ -7,6 +7,11 @@ window.ChatApp.Views.Room = Backbone.View.extend({
     this.messages = this.model.messages;
     this.messages.bind("add", this.renderMessages);
     this.messages.fetch({ success: this.renderMessages });
+
+    var self = this;
+    setInterval(function() {
+      self.messages.fetch({ success: self.renderMessages });
+    }, 1000);
   },
 
   events: {
