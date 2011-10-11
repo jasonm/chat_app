@@ -23,7 +23,7 @@ body {
   margin: 0 auto;
 }
 
-body.sessions {
+body.sessions, body.chats {
   form {
     input[type=submit] {
       @include button;
