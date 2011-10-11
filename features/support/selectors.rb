@@ -16,6 +16,8 @@ module HtmlSelectorsHelpers
       "ul#chat-rooms>li"
     when "a chat room list item link"
       "ul#chat-rooms>li>a"
+    when "chat room messages"
+      "ul#chat-messages>li"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
