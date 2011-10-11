@@ -17,5 +17,6 @@ window.ChatApp.Routers.Chat = Backbone.Router.extend({
   chatRoom: function(roomId) {
     var room = this.rooms.get(roomId);
     var view = new ChatApp.Views.Room({ model: room });
+    $(this.el).empty().append(view.render().el);
   }
 });
