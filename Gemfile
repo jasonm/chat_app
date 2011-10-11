@@ -33,6 +33,8 @@ gem "jasminerice"
 group :development, :test do
   gem "rspec-rails", "~> 2.6.1"
   gem "ruby-debug",   :platforms => :mri_18
+  gem 'spork', '~> 0.9.0.rc'
+  gem "guard-spork"
 end
 
 group :test do
