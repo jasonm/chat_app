@@ -2,7 +2,7 @@ describe("Views.RoomList", function() {
   var rooms, el, view;
 
   beforeEach(function() {
-    rooms = new ChatApp.Collections.Rooms([{ name: "Red" }, { name: "Blue" }]);
+    rooms = new ChatApp.Collections.Rooms([{ name: "Red", id: 1 }, { name: "Blue", id: 2 }]);
     el = $("<div></div>");
     view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
   });
@@ -30,6 +30,8 @@ describe("Views.RoomList", function() {
 
     expect(el).toContain("ul#chat-rooms li a:contains('Red')")
     expect(el).toContain("ul#chat-rooms li a:contains('Blue')")
+
+    expect($("ul#chat-rooms li a:contains('Blue')", el)).toHaveAttr("href", "#rooms/2")
   });
 
   it("re-renders when a model is added to the collection", function() {

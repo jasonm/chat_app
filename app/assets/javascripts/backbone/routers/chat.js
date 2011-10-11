@@ -5,7 +5,8 @@ window.ChatApp.Routers.Chat = Backbone.Router.extend({
   },
 
   routes: {
-    "": "roomList"
+    "": "roomList",
+    "rooms/:id": "chatRoom"
   },
 
   roomList: function() {
