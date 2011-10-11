@@ -40,5 +40,12 @@ describe("Views.RoomList", function() {
   });
 
   it("re-renders when a model is added to the collection", function() {
+    var el = $("<div></div>");
+    var view = new ChatApp.Views.RoomList({ el: el, collection: rooms });
+    view.render();
+
+    rooms.add({ name: "Green" });
+
+    expect(el).toContain("ul#chat-rooms li a:contains('Green')")
   });
 });

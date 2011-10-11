@@ -10,6 +10,12 @@ module HtmlSelectorsHelpers
 
     when "the page"
       "html > body"
+    when "the chat room list"
+      "ul#chat-rooms"
+    when "a chat room list item"
+      "ul#chat-rooms>li"
+    when "a chat room list item link"
+      "ul#chat-rooms>li>a"
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

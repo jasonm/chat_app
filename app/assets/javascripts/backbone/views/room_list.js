@@ -6,6 +6,8 @@ window.ChatApp.Views.RoomList = Backbone.View.extend({
   },
 
   initialize: function() {
+    _.bindAll(this, "renderRooms");
+    this.collection.bind("add", this.renderRooms);
   },
 
   template: JST['room_list'],
@@ -20,6 +22,7 @@ window.ChatApp.Views.RoomList = Backbone.View.extend({
     var ul = this.$("ul#chat-rooms");
     var roomTemplate = JST['room_list_item'];
 
+    ul.empty();
     this.collection.each(function(room) {
       ul.append(roomTemplate({ room: room }));
     });
